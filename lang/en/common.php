@@ -8,6 +8,7 @@ return [
         'contact' => 'Contact',
         'menu' => 'Menu',
         'close' => 'Close',
+        'cv' => 'CV',
     ],
 
     'footer' => [

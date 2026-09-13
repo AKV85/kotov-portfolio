@@ -8,6 +8,7 @@ return [
         'contact' => 'Kontaktai',
         'menu' => 'Meniu',
         'close' => 'Uždaryti',
+        'cv' => 'CV',
     ],
 
     'footer' => [
