@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Andrej Kotov | PHP / Laravel Backend Developer')
+@section('title', __('home.title'))
 
 @section('content')
 
@@ -8,21 +8,19 @@
         <div class="max-w-5xl">
 
             <p class="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-orange-400">
-                PHP / Laravel Backend Developer
+                {{ __('home.hero.role') }}
             </p>
 
             <h1 class="max-w-4xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-8xl">
-                Andrej Kotov
+                {{ __('home.hero.name') }}
             </h1>
 
             <p class="mt-8 max-w-3xl text-lg leading-8 text-neutral-400 sm:text-xl">
-                I build production backend applications, APIs and integrations
-                with PHP, Laravel and relational databases.
+                {{ __('home.hero.description') }}
             </p>
 
             <p class="mt-4 max-w-3xl text-base leading-7 text-neutral-500 sm:text-lg">
-                My work focuses on business logic, integrations, SQL,
-                maintainability and reliable production systems.
+                {{ __('home.hero.focus') }}
             </p>
 
             <div class="mt-10 flex flex-wrap gap-4">
@@ -30,14 +28,14 @@
                     href="#projects"
                     class="border border-white bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-neutral-200"
                 >
-                    View projects
+                    {{ __('home.hero.view_projects') }}
                 </a>
 
                 <a
                     href="#contact"
                     class="border border-white/20 px-5 py-3 text-sm font-medium transition hover:border-white/50"
                 >
-                    Contact
+                    {{ __('home.hero.contact') }}
                 </a>
             </div>
 
@@ -49,11 +47,11 @@
 
             <div class="mb-12">
                 <p class="text-sm uppercase tracking-[0.2em] text-neutral-500">
-                    01 / Selected Projects
+                    {{ __('home.projects.eyebrow') }}
                 </p>
 
                 <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                    Projects
+                    {{ __('home.projects.title') }}
                 </h2>
             </div>
 
@@ -63,18 +61,16 @@
                     <div>
                         <div class="flex flex-wrap items-center gap-4">
                             <h3 class="text-2xl font-semibold tracking-tight sm:text-3xl">
-                                Service Desk
+                                {{ __('home.projects.service_desk.title') }}
                             </h3>
 
                             <span class="border border-orange-400/30 px-2.5 py-1 text-xs uppercase tracking-wider text-orange-400">
-                                Production project
+                                {{ __('home.projects.service_desk.status_label') }}
                             </span>
                         </div>
 
                         <p class="mt-6 max-w-3xl text-base leading-7 text-neutral-400 sm:text-lg">
-                            A production-ready service desk application built with Laravel,
-                            focused on ticket workflows, permissions, integrations,
-                            notifications and maintainable backend architecture.
+                            {{ __('home.projects.service_desk.description') }}
                         </p>
 
                         <div class="mt-8 flex flex-wrap gap-2">
@@ -85,7 +81,6 @@
                                 'Redis',
                                 'Docker',
                                 'REST API',
-                                'Pest',
                             ] as $technology)
                                 <span class="border border-white/10 px-3 py-1.5 text-xs text-neutral-400">
                                     {{ $technology }}
@@ -95,10 +90,12 @@
 
                         <div class="mt-10 flex flex-wrap gap-6 text-sm">
                             <a
-                                href="{{ route('projects.service-desk') }}"
+                                href="{{ app()->getLocale() === 'en'
+                                    ? route('projects.service-desk')
+                                    : route('localized.projects.service-desk', ['locale' => app()->getLocale()]) }}"
                                 class="font-medium text-white underline decoration-white/20 underline-offset-4 transition hover:decoration-orange-400"
                             >
-                                View case study
+                                {{ __('home.projects.service_desk.view_case_study') }}
                             </a>
 
                             <a
@@ -107,7 +104,7 @@
                                 rel="noopener noreferrer"
                                 class="text-neutral-400 transition hover:text-white"
                             >
-                                GitHub
+                                {{ __('home.projects.service_desk.github') }}
                             </a>
                         </div>
                     </div>
@@ -117,32 +114,31 @@
 
                             <div>
                                 <dt class="text-xs uppercase tracking-[0.18em] text-neutral-600">
-                                    Type
+                                    {{ __('home.projects.service_desk.type_label') }}
                                 </dt>
 
                                 <dd class="mt-2 text-sm leading-6 text-neutral-300">
-                                    Service management platform
+                                    {{ __('home.projects.service_desk.type') }}
                                 </dd>
                             </div>
 
                             <div>
                                 <dt class="text-xs uppercase tracking-[0.18em] text-neutral-600">
-                                    Focus
+                                    {{ __('home.projects.service_desk.focus_label') }}
                                 </dt>
 
                                 <dd class="mt-2 text-sm leading-6 text-neutral-300">
-                                    Backend architecture, workflows,
-                                    integrations and APIs
+                                    {{ __('home.projects.service_desk.focus') }}
                                 </dd>
                             </div>
 
                             <div>
                                 <dt class="text-xs uppercase tracking-[0.18em] text-neutral-600">
-                                    Status
+                                    {{ __('home.projects.service_desk.status_title') }}
                                 </dt>
 
                                 <dd class="mt-2 text-sm text-orange-400">
-                                    Completed
+                                    {{ __('home.projects.service_desk.status') }}
                                 </dd>
                             </div>
 
@@ -162,31 +158,25 @@
 
                 <div>
                     <p class="text-sm uppercase tracking-[0.2em] text-neutral-500">
-                        02 / About
+                        {{ __('home.about.eyebrow') }}
                     </p>
 
                     <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                        About
+                        {{ __('home.about.title') }}
                     </h2>
                 </div>
 
                 <div class="max-w-3xl space-y-6 text-lg leading-8 text-neutral-400">
                     <p>
-                        I am a PHP / Laravel backend developer working on production
-                        systems in the logistics industry.
+                        {{ __('home.about.paragraph_1') }}
                     </p>
 
                     <p>
-                        I specialize in maintaining and improving existing applications,
-                        implementing new backend functionality, optimizing SQL queries
-                        and investigating production issues.
+                        {{ __('home.about.paragraph_2') }}
                     </p>
 
                     <p>
-                        I am comfortable working with existing codebases and legacy
-                        systems, understanding how they behave in production, finding
-                        the root cause of problems and implementing practical changes
-                        without breaking existing processes.
+                        {{ __('home.about.paragraph_3') }}
                     </p>
                 </div>
 
@@ -200,11 +190,11 @@
 
             <div class="mb-12">
                 <p class="text-sm uppercase tracking-[0.2em] text-neutral-500">
-                    03 / Experience
+                    {{ __('home.experience.eyebrow') }}
                 </p>
 
                 <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                    Experience
+                    {{ __('home.experience.title') }}
                 </h2>
             </div>
 
@@ -212,42 +202,37 @@
 
                 <div>
                     <p class="text-lg font-medium text-white">
-                        PHP / Laravel Backend Developer
+                        {{ __('home.experience.role') }}
                     </p>
 
                     <p class="mt-2 text-sm text-neutral-400">
-                        UAB Vlantana · Klaipėda, Lithuania
+                        {{ __('home.experience.company') }}
                     </p>
 
                     <p class="mt-1 text-sm text-neutral-500">
-                        Nov 2023 — Present
+                        {{ __('home.experience.period') }}
                     </p>
                 </div>
 
                 <div>
                     <p class="max-w-3xl text-base leading-7 text-neutral-400">
-                        Development and maintenance of production backend systems
-                        used in logistics operations.
+                        {{ __('home.experience.description_1') }}
                     </p>
 
                     <p class="mt-4 max-w-3xl text-base leading-7 text-neutral-400">
-                        My work includes implementing new backend functionality,
-                        maintaining legacy PHP / Laravel applications, optimizing
-                        MySQL and Microsoft SQL Server queries, working with
-                        integrations, automated jobs, reporting and production
-                        issue investigation.
+                        {{ __('home.experience.description_2') }}
                     </p>
 
                     <div class="mt-8 grid gap-3 sm:grid-cols-2">
                         @foreach ([
-                            'Backend feature development',
-                            'Legacy PHP / Laravel maintenance',
-                            'MySQL / MS SQL optimization',
-                            'REST API integrations',
-                            'Automated jobs and notifications',
-                            'Testing with Pest',
-                            'Production monitoring and debugging',
-                            'PDF / Excel / Word reporting',
+                            __('home.experience.items.backend_features'),
+                            __('home.experience.items.legacy'),
+                            __('home.experience.items.sql'),
+                            __('home.experience.items.api'),
+                            __('home.experience.items.jobs'),
+                            __('home.experience.items.testing'),
+                            __('home.experience.items.monitoring'),
+                            __('home.experience.items.reporting'),
                         ] as $item)
                             <div class="flex gap-3 text-sm text-neutral-400">
                                 <span class="text-orange-400">/</span>
@@ -267,11 +252,11 @@
 
             <div class="mb-12">
                 <p class="text-sm uppercase tracking-[0.2em] text-neutral-500">
-                    04 / Technologies
+                    {{ __('home.technologies.eyebrow') }}
                 </p>
 
                 <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                    Technologies
+                    {{ __('home.technologies.title') }}
                 </h2>
             </div>
 
@@ -279,7 +264,7 @@
 
                 @foreach ([
                     [
-                        'title' => 'Backend',
+                        'title' => __('home.technologies.groups.backend'),
                         'items' => [
                             'PHP',
                             'Laravel',
@@ -287,7 +272,7 @@
                         ],
                     ],
                     [
-                        'title' => 'Data',
+                        'title' => __('home.technologies.groups.data'),
                         'items' => [
                             'MySQL',
                             'Microsoft SQL Server',
@@ -295,7 +280,7 @@
                         ],
                     ],
                     [
-                        'title' => 'Engineering',
+                        'title' => __('home.technologies.groups.engineering'),
                         'items' => [
                             'Docker',
                             'Git',
@@ -304,7 +289,7 @@
                         ],
                     ],
                     [
-                        'title' => 'Quality',
+                        'title' => __('home.technologies.groups.quality'),
                         'items' => [
                             'Pest',
                             'PHPUnit',
@@ -340,19 +325,17 @@
 
                 <div>
                     <p class="text-sm uppercase tracking-[0.2em] text-neutral-500">
-                        05 / Contact
+                        {{ __('home.contact.eyebrow') }}
                     </p>
 
                     <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                        Contact
+                        {{ __('home.contact.title') }}
                     </h2>
                 </div>
 
                 <div>
                     <p class="max-w-2xl text-lg leading-8 text-neutral-400">
-                        Open to freelance and remote PHP / Laravel backend development
-                        opportunities, including existing applications, legacy systems
-                        and database-heavy projects.
+                        {{ __('home.contact.description') }}
                     </p>
 
                     <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4">
@@ -378,7 +361,7 @@
                             href="mailto:a.kotov.laknojus@gmail.com"
                             class="text-base text-white underline decoration-white/20 underline-offset-4 transition hover:decoration-orange-400"
                         >
-                            Email
+                            {{ __('home.contact.email') }}
                         </a>
                     </div>
                 </div>
