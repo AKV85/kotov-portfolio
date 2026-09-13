@@ -6,24 +6,39 @@
         'localized.projects.service-desk',
     ], true);
 
+    $isCv = in_array($currentRoute, [
+        'cv',
+        'localized.cv',
+    ], true);
+
     $currentLocale = app()->getLocale();
 
     $homeUrl = $currentLocale === 'en'
         ? route('home')
         : route('localized.home', ['locale' => $currentLocale]);
 
+    $cvUrl = $currentLocale === 'en'
+        ? route('cv')
+        : route('localized.cv', ['locale' => $currentLocale]);
+
     $localeUrls = [
         'en' => $isProject
             ? route('projects.service-desk')
-            : route('home'),
+            : ($isCv ? route('cv') : route('home')),
 
         'lt' => $isProject
             ? route('localized.projects.service-desk', ['locale' => 'lt'])
-            : route('localized.home', ['locale' => 'lt']),
+            : ($isCv
+                ? route('localized.cv', ['locale' => 'lt'])
+                : route('localized.home', ['locale' => 'lt'])
+            ),
 
         'ru' => $isProject
             ? route('localized.projects.service-desk', ['locale' => 'ru'])
-            : route('localized.home', ['locale' => 'ru']),
+            : ($isCv
+                ? route('localized.cv', ['locale' => 'ru'])
+                : route('localized.home', ['locale' => 'ru'])
+            ),
     ];
 @endphp
 
@@ -60,6 +75,17 @@
                 class="text-sm text-neutral-300 transition hover:text-white"
             >
                 {{ __('common.navigation.about') }}
+            </a>
+
+            <a
+                href="{{ $cvUrl }}"
+                @class([
+                    'text-sm transition hover:text-white',
+                    'text-white' => $isCv,
+                    'text-neutral-300' => ! $isCv,
+                ])
+            >
+                {{ __('common.navigation.cv') }}
             </a>
 
             <a
@@ -132,6 +158,18 @@
                 @click="open = false"
             >
                 {{ __('common.navigation.about') }}
+            </a>
+
+            <a
+                href="{{ $cvUrl }}"
+                @class([
+                    'transition hover:text-white',
+                    'text-white' => $isCv,
+                    'text-neutral-300' => ! $isCv,
+                ])
+                @click="open = false"
+            >
+                {{ __('common.navigation.cv') }}
             </a>
 
             <a
