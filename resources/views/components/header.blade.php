@@ -20,6 +20,13 @@
             </a>
 
             <a
+                href="#experience"
+                class="text-sm text-neutral-300 transition hover:text-white"
+            >
+                Experience
+            </a>
+
+            <a
                 href="#about"
                 class="text-sm text-neutral-300 transition hover:text-white"
             >
@@ -92,6 +99,14 @@
             </a>
 
             <a
+                href="#experience"
+                class="text-neutral-300"
+                @click="open = false"
+            >
+                Experience
+            </a>
+
+            <a
                 href="#about"
                 class="text-neutral-300"
                 @click="open = false"
@@ -115,11 +130,17 @@
                     EN
                 </button>
 
-                <button type="button">
+                <button
+                    type="button"
+                    class="transition hover:text-white"
+                >
                     LT
                 </button>
 
-                <button type="button">
+                <button
+                    type="button"
+                    class="transition hover:text-white"
+                >
                     RU
                 </button>
             </div>
