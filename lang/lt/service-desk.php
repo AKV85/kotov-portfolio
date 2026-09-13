@@ -3,6 +3,11 @@
 return [
     'title' => 'Service Desk | Andrej Kotov',
 
+    'seo' => [
+        'title' => 'Service Desk projekto analizė | Andrej Kotov',
+        'description' => 'Andrej Kotov Service Desk projekto analizė: produkcijai paruošta Laravel aplikacija su užduočių valdymu, integracijomis, AI funkcijomis, automatizuotais testais ir diegimu.',
+    ],
+
     'hero' => [
         'back' => '← Grįžti į projektus',
         'eyebrow' => 'Produkcinis projektas',

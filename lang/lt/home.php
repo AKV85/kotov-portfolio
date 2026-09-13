@@ -3,6 +3,11 @@
 return [
     'title' => 'Andrej Kotov | PHP / Laravel Backend programuotojas',
 
+    'seo' => [
+        'title' => 'Andrej Kotov | PHP / Laravel Backend programuotojas',
+        'description' => 'Andrej Kotov portfolio. PHP ir Laravel backend programuotojas, turintis patirties su produkcinėmis sistemomis, legacy aplikacijomis, SQL optimizavimu ir backend integracijomis.',
+    ],
+
     'hero' => [
         'role' => 'PHP / Laravel Backend programuotojas',
         'name' => 'Andrej Kotov',

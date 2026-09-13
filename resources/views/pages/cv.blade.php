@@ -1,6 +1,28 @@
 @extends('layouts.app')
 
-@section('title', __('cv.title'))
+@php
+    $currentLocale = app()->getLocale();
+
+    $canonicalUrl = $currentLocale === 'en'
+        ? route('cv')
+        : route('localized.cv', ['locale' => $currentLocale]);
+
+    $hreflangEn = route('cv');
+    $hreflangLt = route('localized.cv', ['locale' => 'lt']);
+    $hreflangRu = route('localized.cv', ['locale' => 'ru']);
+@endphp
+
+@section('title', __('cv.seo.title'))
+@section('meta_description', __('cv.seo.description'))
+
+@section('canonical', $canonicalUrl)
+
+@section('hreflang_en', $hreflangEn)
+@section('hreflang_lt', $hreflangLt)
+@section('hreflang_ru', $hreflangRu)
+@section('hreflang_x_default', $hreflangEn)
+
+@section('og_url', $canonicalUrl)
 
 @section('content')
 
