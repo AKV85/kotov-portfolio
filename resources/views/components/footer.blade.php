@@ -7,7 +7,7 @@
         </p>
 
         <p>
-            PHP / Laravel Backend Developer
+            {{ __('common.footer.role') }}
         </p>
     </div>
 </footer>
