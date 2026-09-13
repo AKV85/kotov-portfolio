@@ -1,6 +1,28 @@
 @extends('layouts.app')
 
-@section('title', __('home.title'))
+@php
+    $currentLocale = app()->getLocale();
+
+    $canonicalUrl = $currentLocale === 'en'
+        ? route('home')
+        : route('localized.home', ['locale' => $currentLocale]);
+
+    $hreflangEn = route('home');
+    $hreflangLt = route('localized.home', ['locale' => 'lt']);
+    $hreflangRu = route('localized.home', ['locale' => 'ru']);
+@endphp
+
+@section('title', __('home.seo.title'))
+@section('meta_description', __('home.seo.description'))
+
+@section('canonical', $canonicalUrl)
+
+@section('hreflang_en', $hreflangEn)
+@section('hreflang_lt', $hreflangLt)
+@section('hreflang_ru', $hreflangRu)
+@section('hreflang_x_default', $hreflangEn)
+
+@section('og_url', $canonicalUrl)
 
 @section('content')
 

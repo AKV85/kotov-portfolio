@@ -3,6 +3,11 @@
 return [
     'title' => 'Service Desk | Andrej Kotov',
 
+    'seo' => [
+        'title' => 'Service Desk: разбор проекта | Andrej Kotov',
+        'description' => 'Разбор проекта Service Desk от Andrej Kotov: production-ready Laravel-приложение с workflow заявок, интеграциями, AI-функциями, автоматизированными тестами и deployment.',
+    ],
+
     'hero' => [
         'back' => '← Назад к проектам',
         'eyebrow' => 'Production-проект',

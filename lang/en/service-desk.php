@@ -3,6 +3,11 @@
 return [
     'title' => 'Service Desk | Andrej Kotov',
 
+    'seo' => [
+        'title' => 'Service Desk Case Study | Andrej Kotov',
+        'description' => 'Service Desk case study by Andrej Kotov: a production-ready Laravel application with ticket workflows, integrations, AI assistance, automated testing and deployment.',
+    ],
+
     'hero' => [
         'back' => '← Back to projects',
         'eyebrow' => 'Production Project',

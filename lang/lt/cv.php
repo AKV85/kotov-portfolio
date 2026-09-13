@@ -3,6 +3,11 @@
 return [
     'title' => 'CV | Andrej Kotov',
 
+    'seo' => [
+        'title' => 'CV | Andrej Kotov | PHP / Laravel Backend programuotojas',
+        'description' => 'Andrej Kotov CV. PHP / Laravel backend programuotojas, turintis patirties su produkcinėmis sistemomis, legacy aplikacijomis, MySQL, Microsoft SQL Server ir backend integracijomis.',
+    ],
+
     'hero' => [
         'eyebrow' => 'Gyvenimo aprašymas',
         'name' => 'Andrej Kotov',
@@ -181,6 +186,7 @@ return [
     'earlier_experience' => [
         'eyebrow' => 'Ankstesnė patirtis',
         'title' => 'Prieš programavimą',
+        'meta_description' => 'Andrej Kotov CV. PHP / Laravel Backend programuotojas, turintis profesinės patirties logistikos sistemose, duomenų bazėse, integracijose ir production sistemų priežiūroje.',
         'paragraphs' => [
             'Prieš pradėdamas dirbti programavimo srityje dirbau aliuminių laivų gamyboje suvirintoju, o vėliau gamybos vadovu.',
             'Ši patirtis padėjo išsiugdyti praktinį problemų sprendimą, planavimą, atsakomybę, komandinį darbą ir bendravimo įgūdžius, kurie naudingi ir programinės įrangos kūrime.',

@@ -1,16 +1,34 @@
 @extends('layouts.app')
 
-@section('title', __('service-desk.title'))
-
-@section('content')
-
 @php
     $currentLocale = app()->getLocale();
 
     $homeUrl = $currentLocale === 'en'
         ? route('home')
         : route('localized.home', ['locale' => $currentLocale]);
+
+    $canonicalUrl = $currentLocale === 'en'
+        ? route('projects.service-desk')
+        : route('localized.projects.service-desk', ['locale' => $currentLocale]);
+
+    $hreflangEn = route('projects.service-desk');
+    $hreflangLt = route('localized.projects.service-desk', ['locale' => 'lt']);
+    $hreflangRu = route('localized.projects.service-desk', ['locale' => 'ru']);
 @endphp
+
+@section('title', __('service-desk.seo.title'))
+@section('meta_description', __('service-desk.seo.description'))
+
+@section('canonical', $canonicalUrl)
+
+@section('hreflang_en', $hreflangEn)
+@section('hreflang_lt', $hreflangLt)
+@section('hreflang_ru', $hreflangRu)
+@section('hreflang_x_default', $hreflangEn)
+
+@section('og_url', $canonicalUrl)
+
+@section('content')
 
 <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
     <div class="max-w-5xl">

@@ -3,6 +3,11 @@
 return [
     'title' => 'CV | Andrej Kotov',
 
+    'seo' => [
+        'title' => 'CV | Andrej Kotov | PHP / Laravel Backend Developer',
+        'description' => 'CV of Andrej Kotov, a PHP / Laravel backend developer with experience in production systems, legacy applications, MySQL, Microsoft SQL Server and backend integrations.',
+    ],
+
     'hero' => [
         'eyebrow' => 'Curriculum Vitae',
         'name' => 'Andrej Kotov',
@@ -181,6 +186,7 @@ return [
     'earlier_experience' => [
         'eyebrow' => 'Earlier Experience',
         'title' => 'Before Software Development',
+        'meta_description' => 'CV of Andrej Kotov, PHP / Laravel Backend Developer with professional experience in logistics systems, databases, integrations and production support.',
         'paragraphs' => [
             'Before moving into software development, I worked in aluminium boat manufacturing as a welder and later as a production manager.',
             'That experience developed practical problem solving, planning, responsibility, teamwork and communication skills that remain useful in software development today.',
