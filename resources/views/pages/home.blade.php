@@ -95,12 +95,19 @@
 
                         <div class="mt-10 flex flex-wrap gap-6 text-sm">
                             <a
+                                href="{{ route('projects.service-desk') }}"
+                                class="font-medium text-white underline decoration-white/20 underline-offset-4 transition hover:decoration-orange-400"
+                            >
+                                View case study
+                            </a>
+
+                            <a
                                 href="https://github.com/AKV85/service-desk"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="font-medium text-white underline decoration-white/20 underline-offset-4 transition hover:decoration-orange-400"
+                                class="text-neutral-400 transition hover:text-white"
                             >
-                                View on GitHub
+                                GitHub
                             </a>
                         </div>
                     </div>

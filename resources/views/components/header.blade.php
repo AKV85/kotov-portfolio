@@ -13,28 +13,28 @@
 
         <nav class="hidden items-center gap-8 md:flex">
             <a
-                href="#projects"
+                href="{{ route('home') }}#projects"
                 class="text-sm text-neutral-300 transition hover:text-white"
             >
                 Projects
             </a>
 
             <a
-                href="#experience"
+                href="{{ route('home') }}#experience"
                 class="text-sm text-neutral-300 transition hover:text-white"
             >
                 Experience
             </a>
 
             <a
-                href="#about"
+                href="{{ route('home') }}#about"
                 class="text-sm text-neutral-300 transition hover:text-white"
             >
                 About
             </a>
 
             <a
-                href="#contact"
+                href="{{ route('home') }}#contact"
                 class="text-sm text-neutral-300 transition hover:text-white"
             >
                 Contact
@@ -91,7 +91,7 @@
     >
         <nav class="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-6">
             <a
-                href="#projects"
+                href="{{ route('home') }}#projects"
                 class="text-neutral-300"
                 @click="open = false"
             >
@@ -99,7 +99,7 @@
             </a>
 
             <a
-                href="#experience"
+                href="{{ route('home') }}#experience"
                 class="text-neutral-300"
                 @click="open = false"
             >
@@ -107,7 +107,7 @@
             </a>
 
             <a
-                href="#about"
+                href="{{ route('home') }}#about"
                 class="text-neutral-300"
                 @click="open = false"
             >
@@ -115,7 +115,7 @@
             </a>
 
             <a
-                href="#contact"
+                href="{{ route('home') }}#contact"
                 class="text-neutral-300"
                 @click="open = false"
             >
