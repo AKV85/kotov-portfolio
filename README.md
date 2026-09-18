@@ -1,66 +1,332 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Kotov Portfolio
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Personal developer portfolio of **Andrej Kotov**, a PHP / Laravel Backend Developer.
 
-## About Laravel
+The project is designed as a multilingual portfolio hub for presenting professional experience, technical skills and backend development projects through dedicated case studies.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The portfolio is built with Laravel and uses server-rendered Blade views with a lightweight frontend stack.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Multilingual interface in English, Lithuanian and Russian
+- Locale-aware URLs and navigation
+- Dedicated CV page
+- Individual project case studies
+- Service Desk project case study
+- Responsive dark interface
+- SEO-friendly localized metadata
+- Canonical URLs and hreflang support
+- Open Graph and Twitter metadata
+- XML sitemap
+- robots.txt
+- Custom favicon
+- Automated feature tests
 
-## Learning Laravel
+## Public Pages
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The portfolio currently contains three main types of public pages.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Home
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Introduces the developer and provides an overview of:
 
-## Laravel Sponsors
+- professional background
+- backend development experience
+- technologies and tools
+- selected projects
+- contact information
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Available in:
 
-### Premium Partners
+```text
+/
+/lt
+/ru
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### CV
 
-## Contributing
+A multilingual CV containing:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- professional experience
+- technical skills
+- education and training
+- languages
+- earlier professional experience
+- contact information
 
-## Code of Conduct
+Available in:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```text
+/cv
+/lt/cv
+/ru/cv
+```
 
-## Security Vulnerabilities
+### Service Desk Case Study
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+A detailed case study of the Service Desk project covering:
 
-## License
+- project architecture
+- ticket workflow and backend logic
+- audit history and notifications
+- external integrations
+- AI integration
+- automated testing
+- production and deployment approach
+- technology stack
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Available in:
+
+```text
+/projects/service-desk
+/lt/projects/service-desk
+/ru/projects/service-desk
+```
+
+## Localization
+
+English is the default language.
+
+Lithuanian and Russian pages use explicit locale prefixes:
+
+```text
+/lt/...
+/ru/...
+```
+
+Laravel localization files are stored in:
+
+```text
+lang/en
+lang/lt
+lang/ru
+```
+
+The language switcher preserves the current page when changing locale.
+
+Localized pages also provide locale-aware canonical URLs and `hreflang` links for:
+
+- English
+- Lithuanian
+- Russian
+- x-default
+
+## Technology Stack
+
+### Backend
+
+- PHP
+- Laravel 10
+- Blade
+- Laravel localization
+
+### Frontend
+
+- Tailwind CSS 4
+- Alpine.js
+- Vite 5
+
+### Development
+
+- Docker
+- Laravel Sail
+- Git
+
+### Quality
+
+- PHPUnit
+- Laravel Pint
+- Feature testing
+
+## Automated Tests
+
+The portfolio includes automated feature tests for the main public functionality.
+
+Current coverage includes:
+
+- Home pages in EN / LT / RU
+- CV pages in EN / LT / RU
+- Service Desk pages in EN / LT / RU
+- localized public routes
+- language switching
+- locale-aware navigation
+- unsupported locale handling
+- SEO metadata
+- canonical URLs
+- hreflang links
+- sitemap
+- robots.txt
+- favicon
+
+Current test suite:
+
+```text
+29 tests passed
+168 assertions
+```
+
+Run all tests with:
+
+```bash
+./vendor/bin/sail artisan test
+```
+
+Individual feature test suites can also be executed directly:
+
+```bash
+./vendor/bin/sail artisan test tests/Feature/HomePageTest.php
+./vendor/bin/sail artisan test tests/Feature/CvPageTest.php
+./vendor/bin/sail artisan test tests/Feature/ServiceDeskPageTest.php
+./vendor/bin/sail artisan test tests/Feature/SeoTest.php
+```
+
+## Local Development
+
+### Requirements
+
+The recommended local environment uses Docker and Laravel Sail.
+
+You will need:
+
+- Docker
+- Git
+- Composer
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/AKV85/kotov-portfolio.git
+cd kotov-portfolio
+```
+
+Install PHP dependencies:
+
+```bash
+composer install
+```
+
+Create the environment file:
+
+```bash
+cp .env.example .env
+```
+
+Start the application:
+
+```bash
+./vendor/bin/sail up -d
+```
+
+Generate the application key:
+
+```bash
+./vendor/bin/sail artisan key:generate
+```
+
+Run database migrations:
+
+```bash
+./vendor/bin/sail artisan migrate
+```
+
+Install frontend dependencies:
+
+```bash
+./vendor/bin/sail npm install
+```
+
+Start the Vite development server:
+
+```bash
+./vendor/bin/sail npm run dev
+```
+
+The application is then available at:
+
+```text
+http://localhost
+```
+
+## Production Build
+
+Build frontend assets with:
+
+```bash
+./vendor/bin/sail npm run build
+```
+
+## Code Formatting
+
+Laravel Pint is used for PHP code formatting:
+
+```bash
+./vendor/bin/sail pint
+```
+
+Before committing changes, whitespace issues can also be checked with:
+
+```bash
+git diff --check
+```
+
+## Project Structure
+
+The most relevant application directories are:
+
+```text
+app/Http/Middleware/       Locale handling
+lang/                      EN / LT / RU translations
+resources/views/           Blade layouts and pages
+resources/views/pages/     Home and CV pages
+resources/views/projects/  Project case studies
+routes/                     Application routes
+tests/Feature/              Feature and SEO tests
+public/                     Public assets, robots.txt and favicon
+```
+
+## Related Project
+
+### Service Desk
+
+Production-oriented Laravel application demonstrating backend architecture, ticket workflows, audit history, notifications, integrations, AI-assisted functionality and automated testing.
+
+Repository:
+
+https://github.com/AKV85/service-desk
+
+The portfolio contains a dedicated multilingual case study describing the project in more detail.
+
+## Links
+
+**GitHub**
+
+https://github.com/AKV85
+
+**LinkedIn**
+
+https://www.linkedin.com/in/andrej-kotov-09664a21b
+
+**Email**
+
+a.kotov.laknojus@gmail.com
+
+## Project Status
+
+The portfolio is under active development.
+
+Current work includes documentation, CI preparation and production deployment preparation.
+
+The planned production domain is:
+
+```text
+https://kotov.lt
+```
+
+## Author
+
+**Andrej Kotov**  
+PHP / Laravel Backend Developer  
+Klaipėda, Lithuania
