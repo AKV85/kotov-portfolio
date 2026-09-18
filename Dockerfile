@@ -11,14 +11,16 @@ COPY vite.config.js ./
 RUN npm run build
 
 
-FROM php:8.2-cli
+FROM php:8.2-fpm
 
 WORKDIR /app
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         git \
+        nginx \
         unzip \
+        gettext-base \
         libzip-dev \
     && docker-php-ext-install zip \
     && rm -rf /var/lib/apt/lists/*
@@ -46,6 +48,9 @@ RUN composer dump-autoload --optimize \
         storage/framework/views \
         storage/logs \
         bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache
+    && chown -R www-data:www-data storage bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache \
+    && chmod +x /app/docker/start.sh \
+    && rm -f /etc/nginx/sites-enabled/default
 
-CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
+CMD ["/app/docker/start.sh"]
