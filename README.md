@@ -6,6 +6,8 @@ The project is designed as a multilingual portfolio hub for presenting professio
 
 The portfolio is built with Laravel and uses server-rendered Blade views with a lightweight frontend stack.
 
+**Live website:** https://kotov.lt
+
 ## Features
 
 - Multilingual interface in English, Lithuanian and Russian
@@ -21,6 +23,9 @@ The portfolio is built with Laravel and uses server-rendered Blade views with a 
 - robots.txt
 - Custom favicon
 - Automated feature tests
+- Continuous Integration with GitHub Actions
+- Docker-based production deployment
+- Production health endpoint
 
 ## Public Pages
 
@@ -40,8 +45,8 @@ Available in:
 
 ```text
 /
-/lt
-/ru
+ /lt
+ /ru
 ```
 
 ### CV
@@ -138,6 +143,15 @@ Localized pages also provide locale-aware canonical URLs and `hreflang` links fo
 - PHPUnit
 - Laravel Pint
 - Feature testing
+- GitHub Actions CI
+
+### Production
+
+- Railway
+- Docker
+- Cloudflare DNS
+- HTTPS
+- Custom domain
 
 ## Automated Tests
 
@@ -179,6 +193,25 @@ Individual feature test suites can also be executed directly:
 ./vendor/bin/sail artisan test tests/Feature/CvPageTest.php
 ./vendor/bin/sail artisan test tests/Feature/ServiceDeskPageTest.php
 ./vendor/bin/sail artisan test tests/Feature/SeoTest.php
+```
+
+## Continuous Integration
+
+GitHub Actions is used to validate changes on pushes to `main` and on pull requests.
+
+The CI workflow:
+
+- installs Composer dependencies
+- prepares the Laravel environment
+- installs frontend dependencies
+- builds Vite production assets
+- runs the PHPUnit test suite
+- checks PHP formatting with Laravel Pint
+
+The workflow configuration is located at:
+
+```text
+.github/workflows/ci.yml
 ```
 
 ## Local Development
@@ -250,12 +283,107 @@ The application is then available at:
 http://localhost
 ```
 
+## Production Deployment
+
+The portfolio is deployed to **Railway** using the production `Dockerfile` included in the repository.
+
+The production build:
+
+1. installs frontend dependencies with `npm ci`
+2. builds Vite production assets
+3. installs production Composer dependencies
+4. optimizes the Composer autoloader
+5. runs Laravel package discovery
+6. prepares Laravel runtime directories
+7. starts the application on the port provided by Railway
+
+The application uses the following production environment configuration:
+
+```text
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://kotov.lt
+LOG_CHANNEL=stderr
+LOG_LEVEL=warning
+```
+
+`APP_KEY` is configured securely in the production environment and is not stored in the repository.
+
+The custom domain is:
+
+```text
+https://kotov.lt
+```
+
+DNS is managed through **Cloudflare**, while the application itself is hosted on **Railway**.
+
+Cloudflare provides authoritative DNS for the domain and directs `kotov.lt` to the Railway deployment. Existing DNS records for other services and email are maintained separately.
+
+HTTPS is available on the production domain. Laravel is configured to trust the Railway proxy so forwarded HTTPS information is handled correctly.
+
+### Production Health Check
+
+The application exposes:
+
+```text
+/up
+```
+
+Production endpoint:
+
+```text
+https://kotov.lt/up
+```
+
+A healthy application returns:
+
+```json
+{
+    "status": "ok"
+}
+```
+
+### Production Verification
+
+The production deployment is verified for:
+
+- EN / LT / RU home pages
+- EN / LT / RU CV pages
+- EN / LT / RU Service Desk case study pages
+- HTTPS
+- production Vite assets
+- locale switching
+- canonical URLs
+- hreflang links
+- XML sitemap
+- robots.txt
+- favicon
+- health endpoint
+
+The sitemap is available at:
+
+```text
+https://kotov.lt/sitemap.xml
+```
+
+The robots file is available at:
+
+```text
+https://kotov.lt/robots.txt
+```
+
 ## Production Build
 
-Build frontend assets with:
+Build frontend assets locally with:
 
 ```bash
 ./vendor/bin/sail npm run build
+```
+
+A production Docker image can also be built directly from the repository:
+
+```bash
+docker build -t kotov-portfolio .
 ```
 
 ## Code Formatting
@@ -274,10 +402,10 @@ git diff --check
 
 ## Project Structure
 
-The most relevant application directories are:
+The most relevant application directories and files are:
 
 ```text
-app/Http/Middleware/       Locale handling
+app/Http/Middleware/       Locale and proxy handling
 lang/                      EN / LT / RU translations
 resources/views/           Blade layouts and pages
 resources/views/pages/     Home and CV pages
@@ -285,6 +413,8 @@ resources/views/projects/  Project case studies
 routes/                     Application routes
 tests/Feature/              Feature and SEO tests
 public/                     Public assets, robots.txt and favicon
+.github/workflows/          CI configuration
+Dockerfile                  Production container definition
 ```
 
 ## Related Project
@@ -297,9 +427,17 @@ Repository:
 
 https://github.com/AKV85/service-desk
 
+Production:
+
+https://desk.kotov.lt
+
 The portfolio contains a dedicated multilingual case study describing the project in more detail.
 
 ## Links
+
+**Portfolio**
+
+https://kotov.lt
 
 **GitHub**
 
@@ -315,15 +453,15 @@ a.kotov.laknojus@gmail.com
 
 ## Project Status
 
-The portfolio is under active development.
-
-Current work includes documentation, CI preparation and production deployment preparation.
-
-The planned production domain is:
+The portfolio is live in production at:
 
 ```text
 https://kotov.lt
 ```
+
+The current version includes the multilingual portfolio foundation, CV, Service Desk case study, SEO support, automated tests, Continuous Integration and reproducible Docker-based production deployment.
+
+The project is designed to be extended with additional backend project case studies over time.
 
 ## Author
 
