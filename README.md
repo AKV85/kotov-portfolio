@@ -417,6 +417,12 @@ public/                     Public assets, robots.txt and favicon
 Dockerfile                  Production container definition
 ```
 
+## Documentation
+
+Additional technical documentation:
+
+- [Accessibility & Performance Review](docs/accessibility-performance-review.md) — production Lighthouse audit, accessibility review, frontend optimization and before/after performance results.
+
 ## Related Project
 
 ### Service Desk
