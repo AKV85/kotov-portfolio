@@ -3,6 +3,12 @@
 use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/up', function () {
+    return response()->json([
+        'status' => 'ok',
+    ]);
+})->name('health');
+
 Route::view('/', 'pages.home')
     ->name('home');
 
