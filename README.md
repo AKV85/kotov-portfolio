@@ -423,6 +423,8 @@ Additional technical documentation:
 
 - [Accessibility & Performance Review](docs/accessibility-performance-review.md) — production Lighthouse audit, accessibility review, frontend optimization and before/after performance results.
 
+- [Production Security Hardening](docs/security-hardening.md) — production security headers, Content Security Policy, Alpine.js CSP compatibility and verification strategy.
+
 ## Related Project
 
 ### Service Desk
