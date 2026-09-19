@@ -9,6 +9,7 @@
         ];
 
         $ogLocale = $ogLocales[app()->getLocale()] ?? 'en_US';
+        $ogImage = asset('images/og/portfolio.png');
     @endphp
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,8 +68,28 @@
     >
 
     <meta
+        property="og:image"
+        content="{{ $ogImage }}"
+    >
+
+    <meta
+        property="og:image:width"
+        content="1200"
+    >
+
+    <meta
+        property="og:image:height"
+        content="630"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Andrej Kotov - PHP / Laravel Backend Developer"
+    >
+
+    <meta
         name="twitter:card"
-        content="summary"
+        content="summary_large_image"
     >
 
     <meta
@@ -79,6 +100,11 @@
     <meta
         name="twitter:description"
         content="@yield('twitter_description', trim($__env->yieldContent('meta_description', 'PHP / Laravel Backend Developer portfolio of Andrej Kotov.')))"
+    >
+
+    <meta
+        name="twitter:image"
+        content="{{ $ogImage }}"
     >
 
     <link rel="icon" href="/favicon.ico">
@@ -97,4 +123,3 @@
         <x-footer />
     </div>
 </body>
-</html>
