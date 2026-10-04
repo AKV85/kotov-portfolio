@@ -19,6 +19,7 @@ class HomePageTest extends TestCase
             ->assertSee('Technologies')
             ->assertSee('Selected Projects')
             ->assertSee('Service Desk')
+            ->assertSee('Voice Translator')
             ->assertSee('Contact');
     }
 
@@ -30,7 +31,8 @@ class HomePageTest extends TestCase
             ->assertOk()
             ->assertSee('Andrej Kotov')
             ->assertSee('PHP / Laravel Backend programuotojas')
-            ->assertSee('Service Desk');
+            ->assertSee('Service Desk')
+            ->assertSee('Voice Translator');
     }
 
     public function test_russian_home_page_is_available(): void
@@ -41,7 +43,8 @@ class HomePageTest extends TestCase
             ->assertOk()
             ->assertSee('Andrej Kotov')
             ->assertSee('PHP / Laravel Backend-разработчик')
-            ->assertSee('Service Desk');
+            ->assertSee('Service Desk')
+            ->assertSee('Voice Translator');
     }
 
     public function test_home_language_switcher_preserves_home_page(): void
@@ -78,6 +81,10 @@ class HomePageTest extends TestCase
             ->assertSee(
                 route('localized.projects.service-desk', ['locale' => 'lt']),
                 false
+            )
+            ->assertSee(
+                route('localized.projects.voice-translator', ['locale' => 'lt']),
+                false
             );
     }
 
@@ -97,6 +104,10 @@ class HomePageTest extends TestCase
             )
             ->assertSee(
                 route('localized.projects.service-desk', ['locale' => 'ru']),
+                false
+            )
+            ->assertSee(
+                route('localized.projects.voice-translator', ['locale' => 'ru']),
                 false
             );
     }

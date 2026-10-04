@@ -170,6 +170,100 @@
                 </div>
             </article>
 
+            <article class="mt-8 border border-white/10 bg-white/[0.02]">
+                <div class="grid gap-10 p-7 sm:p-9 lg:grid-cols-[1.4fr_0.6fr] lg:p-12">
+
+                    <div>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <h3 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+                                {{ __('home.projects.voice_translator.title') }}
+                            </h3>
+
+                            <span class="border border-orange-400/30 px-2.5 py-1 text-xs uppercase tracking-wider text-orange-400">
+                                {{ __('home.projects.voice_translator.status_label') }}
+                            </span>
+                        </div>
+
+                        <p class="mt-6 max-w-3xl text-base leading-7 text-neutral-400 sm:text-lg">
+                            {{ __('home.projects.voice_translator.description') }}
+                        </p>
+
+                        <div class="mt-8 flex flex-wrap gap-2">
+                            @foreach ([
+                                'PHP',
+                                'Laravel',
+                                'WebSockets',
+                                'Google Speech',
+                                'DeepL',
+                                'OpenAI',
+                                'Docker',
+                            ] as $technology)
+                                <span class="border border-white/10 px-3 py-1.5 text-xs text-neutral-400">
+                                    {{ $technology }}
+                                </span>
+                            @endforeach
+                        </div>
+
+                        <div class="mt-10 flex flex-wrap gap-6 text-sm">
+                            <a
+                                href="{{ app()->getLocale() === 'en'
+                                    ? route('projects.voice-translator')
+                                    : route('localized.projects.voice-translator', ['locale' => app()->getLocale()]) }}"
+                                class="font-medium text-white underline decoration-white/20 underline-offset-4 transition hover:decoration-orange-400"
+                            >
+                                {{ __('home.projects.voice_translator.view_case_study') }}
+                            </a>
+
+                            <a
+                                href="https://github.com/AKV85/voice-translator"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-neutral-400 transition hover:text-white"
+                            >
+                                {{ __('home.projects.voice_translator.github') }}
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-white/10 pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+                        <dl class="space-y-8">
+
+                            <div>
+                                <dt class="text-xs uppercase tracking-[0.18em] text-neutral-600">
+                                    {{ __('home.projects.voice_translator.type_label') }}
+                                </dt>
+
+                                <dd class="mt-2 text-sm leading-6 text-neutral-300">
+                                    {{ __('home.projects.voice_translator.type') }}
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt class="text-xs uppercase tracking-[0.18em] text-neutral-600">
+                                    {{ __('home.projects.voice_translator.focus_label') }}
+                                </dt>
+
+                                <dd class="mt-2 text-sm leading-6 text-neutral-300">
+                                    {{ __('home.projects.voice_translator.focus') }}
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt class="text-xs uppercase tracking-[0.18em] text-neutral-600">
+                                    {{ __('home.projects.voice_translator.status_title') }}
+                                </dt>
+
+                                <dd class="mt-2 text-sm text-orange-400">
+                                    {{ __('home.projects.voice_translator.status') }}
+                                </dd>
+                            </div>
+
+                        </dl>
+                    </div>
+
+                </div>
+            </article>
+
         </div>
     </section>
 
