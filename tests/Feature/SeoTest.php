@@ -108,7 +108,10 @@ class SeoTest extends TestCase
             ->assertSee('<loc>http://localhost/ru/cv</loc>', false)
             ->assertSee('<loc>http://localhost/projects/service-desk</loc>', false)
             ->assertSee('<loc>http://localhost/lt/projects/service-desk</loc>', false)
-            ->assertSee('<loc>http://localhost/ru/projects/service-desk</loc>', false);
+            ->assertSee('<loc>http://localhost/ru/projects/service-desk</loc>', false)
+            ->assertSee('<loc>http://localhost/projects/voice-translator</loc>', false)
+            ->assertSee('<loc>http://localhost/lt/projects/voice-translator</loc>', false)
+            ->assertSee('<loc>http://localhost/ru/projects/voice-translator</loc>', false);
     }
 
     public function test_robots_file_exists_and_references_production_sitemap(): void
