@@ -30,14 +30,32 @@ class VoiceTranslatorPageTest extends TestCase
     {
         $this->get('/lt/projects/voice-translator')
             ->assertOk()
-            ->assertSee('Voice Translator');
+            ->assertSee('Voice Translator projekto analizė')
+            ->assertSee('Katinas, nuo kurio prasidėjo R&D skyrius')
+            ->assertSee('Matuoti prasmę, o ne tik žodžius')
+            ->assertSee('1701 ms')
+            ->assertSee('1677 ms')
+            ->assertSee('Persik')
+            ->assertSee('Peach')
+            ->assertSee('Viešas demo')
+            ->assertSee('Dabartiniai apribojimai')
+            ->assertSee('Technologijų stack');
     }
 
     public function test_russian_voice_translator_page_is_available(): void
     {
         $this->get('/ru/projects/voice-translator')
             ->assertOk()
-            ->assertSee('Voice Translator');
+            ->assertSee('Voice Translator: разбор проекта')
+            ->assertSee('Кот, который запустил R&D-отдел')
+            ->assertSee('Измерять смысл, а не только слова')
+            ->assertSee('1701 ms')
+            ->assertSee('1677 ms')
+            ->assertSee('Персик')
+            ->assertSee('Peach')
+            ->assertSee('Публичное demo')
+            ->assertSee('Текущие ограничения')
+            ->assertSee('Технологический стек');
     }
 
     public function test_voice_translator_language_switcher_preserves_current_project(): void
