@@ -8,9 +8,22 @@ class VoiceTranslatorPageTest extends TestCase
 {
     public function test_english_voice_translator_page_is_available(): void
     {
-        $this->get('/projects/voice-translator')
+        $response = $this->get('/projects/voice-translator');
+
+        $response
             ->assertOk()
-            ->assertSee('Voice Translator');
+            ->assertSee('Voice Translator')
+            ->assertSee('The Cat That Started the R&D Department')
+            ->assertSee('Production Pipeline')
+            ->assertSee('Engineering Lab')
+            ->assertSee('Benchmarking')
+            ->assertSee('93.33%')
+            ->assertSee('1701 ms')
+            ->assertSee('1677 ms')
+            ->assertSee('Peach')
+            ->assertSee('Public Demo')
+            ->assertSee('Current Limitations')
+            ->assertSee('Technology Stack');
     }
 
     public function test_lithuanian_voice_translator_page_is_available(): void
@@ -63,5 +76,20 @@ class VoiceTranslatorPageTest extends TestCase
                 route('localized.home', ['locale' => 'ru']),
                 false
             );
+    }
+
+    public function test_voice_translator_screenshots_exist(): void
+    {
+        foreach ([
+            'public-demo-desktop.png',
+            'public-demo-mobile.png',
+            'live-lab-run.png',
+            'live-lab-comparison.png',
+        ] as $file) {
+            $path = public_path("images/projects/voice-translator/{$file}");
+
+            $this->assertFileExists($path);
+            $this->assertGreaterThan(0, filesize($path));
+        }
     }
 }
