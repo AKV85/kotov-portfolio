@@ -93,6 +93,41 @@ class SeoTest extends TestCase
             ->assertSee('content="ru_RU"', false);
     }
 
+    public function test_voice_translator_pages_have_locale_aware_seo_metadata(): void
+    {
+        $this->get('/projects/voice-translator')
+            ->assertOk()
+            ->assertSee('<title>Voice Translator Case Study | Andrej Kotov</title>', false)
+            ->assertSee('href="http://localhost/projects/voice-translator"', false)
+            ->assertSee('hreflang="en"', false)
+            ->assertSee('hreflang="lt"', false)
+            ->assertSee('hreflang="ru"', false)
+            ->assertSee('hreflang="x-default"', false)
+            ->assertSee('property="og:title"', false)
+            ->assertSee('property="og:description"', false)
+            ->assertSee('property="og:url"', false)
+            ->assertSee('content="article"', false)
+            ->assertSee('images/og/portfolio.png', false)
+            ->assertSee('name="twitter:card"', false)
+            ->assertSee('name="twitter:title"', false)
+            ->assertSee('name="twitter:description"', false)
+            ->assertSee('name="twitter:image"', false);
+
+        $this->get('/lt/projects/voice-translator')
+            ->assertOk()
+            ->assertSee('<html lang="lt">', false)
+            ->assertSee('<title>Voice Translator projekto analizė | Andrej Kotov</title>', false)
+            ->assertSee('href="http://localhost/lt/projects/voice-translator"', false)
+            ->assertSee('content="lt_LT"', false);
+
+        $this->get('/ru/projects/voice-translator')
+            ->assertOk()
+            ->assertSee('<html lang="ru">', false)
+            ->assertSee('<title>Voice Translator: разбор проекта | Andrej Kotov</title>', false)
+            ->assertSee('href="http://localhost/ru/projects/voice-translator"', false)
+            ->assertSee('content="ru_RU"', false);
+    }
+
     public function test_sitemap_contains_all_public_localized_pages(): void
     {
         $response = $this->get('/sitemap.xml');

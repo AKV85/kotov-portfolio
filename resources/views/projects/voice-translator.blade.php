@@ -27,6 +27,7 @@
 @section('hreflang_x_default', $hreflangEn)
 
 @section('og_url', $canonicalUrl)
+@section('og_type', 'article')
 
 @section('content')
 
