@@ -1,10 +1,15 @@
 @php
     $currentRoute = request()->route()?->getName();
 
-    $isProject = in_array($currentRoute, [
+    $projectSlug = match ($currentRoute) {
         'projects.service-desk',
-        'localized.projects.service-desk',
-    ], true);
+        'localized.projects.service-desk' => 'service-desk',
+
+        'projects.voice-translator',
+        'localized.projects.voice-translator' => 'voice-translator',
+
+        default => null,
+    };
 
     $isCv = in_array($currentRoute, [
         'cv',
@@ -22,19 +27,19 @@
         : route('localized.cv', ['locale' => $currentLocale]);
 
     $localeUrls = [
-        'en' => $isProject
-            ? route('projects.service-desk')
+        'en' => $projectSlug
+            ? route("projects.{$projectSlug}")
             : ($isCv ? route('cv') : route('home')),
 
-        'lt' => $isProject
-            ? route('localized.projects.service-desk', ['locale' => 'lt'])
+        'lt' => $projectSlug
+            ? route("localized.projects.{$projectSlug}", ['locale' => 'lt'])
             : ($isCv
                 ? route('localized.cv', ['locale' => 'lt'])
                 : route('localized.home', ['locale' => 'lt'])
             ),
 
-        'ru' => $isProject
-            ? route('localized.projects.service-desk', ['locale' => 'ru'])
+        'ru' => $projectSlug
+            ? route("localized.projects.{$projectSlug}", ['locale' => 'ru'])
             : ($isCv
                 ? route('localized.cv', ['locale' => 'ru'])
                 : route('localized.home', ['locale' => 'ru'])

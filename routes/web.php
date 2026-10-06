@@ -18,6 +18,9 @@ Route::view('/cv', 'pages.cv')
 Route::view('/projects/service-desk', 'projects.service-desk')
     ->name('projects.service-desk');
 
+Route::view('/projects/voice-translator', 'projects.voice-translator')
+    ->name('projects.voice-translator');
+
 Route::prefix('{locale}')
     ->whereIn('locale', ['lt', 'ru'])
     ->middleware(SetLocale::class)
@@ -30,6 +33,9 @@ Route::prefix('{locale}')
 
         Route::view('/projects/service-desk', 'projects.service-desk')
             ->name('localized.projects.service-desk');
+
+        Route::view('/projects/voice-translator', 'projects.voice-translator')
+            ->name('localized.projects.voice-translator');
     });
 
 Route::get('/sitemap.xml', function () {
@@ -45,6 +51,10 @@ Route::get('/sitemap.xml', function () {
         route('projects.service-desk'),
         route('localized.projects.service-desk', ['locale' => 'lt']),
         route('localized.projects.service-desk', ['locale' => 'ru']),
+
+        route('projects.voice-translator'),
+        route('localized.projects.voice-translator', ['locale' => 'lt']),
+        route('localized.projects.voice-translator', ['locale' => 'ru']),
     ];
 
     return response()

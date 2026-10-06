@@ -34,6 +34,20 @@ return [
             'status_title' => 'Būsena',
             'status' => 'Baigtas',
         ],
+
+        'voice_translator' => [
+            'title' => 'Voice Translator',
+            'status_label' => 'Produkcinis projektas',
+            'description' => 'Produkcinė RU ↔ EN push-to-talk balso vertimo sistema, sukurta remiantis išmatuojamais kalbos apdorojimo pipeline, tiekėjų palyginimu ir realia naršyklės delsa.',
+            'view_case_study' => 'Peržiūrėti projekto aprašymą',
+            'github' => 'GitHub',
+            'type_label' => 'Tipas',
+            'type' => 'Balso vertimo sistema',
+            'focus_label' => 'Pagrindinis dėmesys',
+            'focus' => 'Kalbos pipeline, benchmarkai, WebSockets ir AI integracijos',
+            'status_title' => 'Būsena',
+            'status' => 'v1.0.0',
+        ],
     ],
 
     'about' => [

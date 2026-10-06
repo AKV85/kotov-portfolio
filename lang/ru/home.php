@@ -34,6 +34,20 @@ return [
             'status_title' => 'Статус',
             'status' => 'Завершён',
         ],
+
+        'voice_translator' => [
+            'title' => 'Voice Translator',
+            'status_label' => 'Production-проект',
+            'description' => 'Production RU ↔ EN push-to-talk переводчик речи с измеряемыми voice pipeline, сравнением провайдеров и реальной browser latency.',
+            'view_case_study' => 'Подробнее о проекте',
+            'github' => 'GitHub',
+            'type_label' => 'Тип',
+            'type' => 'Приложение для голосового перевода',
+            'focus_label' => 'Основной фокус',
+            'focus' => 'Voice pipeline, benchmark-тесты, WebSockets и AI-интеграции',
+            'status_title' => 'Статус',
+            'status' => 'v1.0.0',
+        ],
     ],
 
     'about' => [
