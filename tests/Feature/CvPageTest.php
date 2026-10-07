@@ -15,7 +15,13 @@ class CvPageTest extends TestCase
             ->assertSee('Andrej Kotov')
             ->assertSee('PHP / Laravel Backend Developer')
             ->assertSee('Professional Experience')
-            ->assertSee('UAB Vlantana');
+            ->assertSee('UAB Vlantana')
+            ->assertSee('Selected Projects')
+            ->assertSee('Service Desk')
+            ->assertSee('Voice Translator')
+            ->assertSee('WebSockets')
+            ->assertSee(route('projects.service-desk'), false)
+            ->assertSee(route('projects.voice-translator'), false);
     }
 
     public function test_lithuanian_cv_page_is_available(): void

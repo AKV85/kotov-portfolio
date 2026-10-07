@@ -10,6 +10,27 @@
     $hreflangEn = route('cv');
     $hreflangLt = route('localized.cv', ['locale' => 'lt']);
     $hreflangRu = route('localized.cv', ['locale' => 'ru']);
+
+    $serviceDeskUrl = $currentLocale === 'en'
+        ? route('projects.service-desk')
+        : route('localized.projects.service-desk', ['locale' => $currentLocale]);
+
+    $voiceTranslatorUrl = $currentLocale === 'en'
+        ? route('projects.voice-translator')
+        : route('localized.projects.voice-translator', ['locale' => $currentLocale]);
+
+    $projectLinks = [
+        'service_desk' => [
+            'case_study' => $serviceDeskUrl,
+            'github' => 'https://github.com/AKV85/service-desk',
+            'live' => 'https://desk.kotov.lt',
+        ],
+        'voice_translator' => [
+            'case_study' => $voiceTranslatorUrl,
+            'github' => 'https://github.com/AKV85/voice-translator',
+            'live' => 'https://voice.kotov.lt',
+        ],
+    ];
 @endphp
 
 @section('title', __('cv.seo.title'))
@@ -139,6 +160,86 @@
                                 </li>
                             @endforeach
                         </ul>
+                    </article>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="border-b border-white/10">
+    <div class="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-16">
+            <div>
+                <p class="text-sm font-medium uppercase tracking-[0.2em] text-orange-400">
+                    {{ __('cv.projects.eyebrow') }}
+                </p>
+
+                <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white">
+                    {{ __('cv.projects.title') }}
+                </h2>
+            </div>
+
+            <div class="space-y-8">
+                @foreach (trans('cv.projects.items') as $key => $project)
+                    @php
+                        $links = $projectLinks[$key] ?? null;
+                    @endphp
+
+                    <article class="border border-white/10 p-7 sm:p-8">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+                            <h3 class="text-xl font-semibold text-white">
+                                {{ $project['name'] }}
+                            </h3>
+
+                            <span class="text-sm text-orange-400">
+                                {{ $project['status'] }}
+                            </span>
+                        </div>
+
+                        <p class="mt-5 max-w-3xl leading-7 text-neutral-400">
+                            {{ $project['description'] }}
+                        </p>
+
+                        <ul class="mt-6 space-y-3">
+                            @foreach ($project['highlights'] as $highlight)
+                                <li class="flex gap-3 text-sm leading-6 text-neutral-400 sm:text-base">
+                                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"></span>
+                                    <span>{{ $highlight }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+
+                        @if ($links)
+                            <div class="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium">
+                                <a
+                                    href="{{ $links['case_study'] }}"
+                                    class="text-neutral-300 transition hover:text-white"
+                                >
+                                    {{ $project['case_study'] }}
+                                </a>
+
+                                <a
+                                    href="{{ $links['github'] }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-neutral-300 transition hover:text-white"
+                                >
+                                    {{ $project['github'] }}
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+
+                                <a
+                                    href="{{ $links['live'] }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-neutral-300 transition hover:text-white"
+                                >
+                                    {{ $project['live'] }}
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        @endif
                     </article>
                 @endforeach
             </div>
