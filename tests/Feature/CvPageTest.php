@@ -33,7 +33,18 @@ class CvPageTest extends TestCase
             ->assertSee('Andrej Kotov')
             ->assertSee('PHP / Laravel Backend programuotojas')
             ->assertSee('Profesinė patirtis')
-            ->assertSee('UAB Vlantana');
+            ->assertSee('UAB Vlantana')
+            ->assertSee('Atrinkti projektai')
+            ->assertSee('Service Desk')
+            ->assertSee('Voice Translator')
+            ->assertSee(
+                route('localized.projects.service-desk', ['locale' => 'lt']),
+                false
+            )
+            ->assertSee(
+                route('localized.projects.voice-translator', ['locale' => 'lt']),
+                false
+            );
     }
 
     public function test_russian_cv_page_is_available(): void

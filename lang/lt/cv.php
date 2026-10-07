@@ -5,14 +5,14 @@ return [
 
     'seo' => [
         'title' => 'CV | Andrej Kotov | PHP / Laravel Backend programuotojas',
-        'description' => 'Andrej Kotov CV. PHP / Laravel backend programuotojas, turintis patirties su produkcinėmis sistemomis, legacy aplikacijomis, MySQL, Microsoft SQL Server ir backend integracijomis.',
+        'description' => 'Andrej Kotov CV. PHP / Laravel backend programuotojas, turintis profesinės patirties logistikos sistemose, duomenų bazių optimizavime, integracijose, automatiniame testavime, WebSocket technologijose ir produkcinėse aplikacijose.',
     ],
 
     'hero' => [
         'eyebrow' => 'Gyvenimo aprašymas',
         'name' => 'Andrej Kotov',
         'role' => 'PHP / Laravel Backend programuotojas',
-        'summary' => 'Backend programuotojas, turintis profesinės patirties kuriant, prižiūrint ir tobulinant gamybines sistemas logistikos srityje. Pagrindinės sritys: PHP, Laravel, duomenų bazės, backend integracijos ir praktinis problemų sprendimas esamose sistemose.',
+        'summary' => 'Backend programuotojas, turintis profesinės patirties dirbant su logistikos sistemomis, moderniomis Laravel aplikacijomis ir legacy PHP kodu. Kuriu ir analizuoju procesus, kuriuose svarbų vaidmenį atlieka duomenų bazės, integracijos, foninės užduotys ir operaciniai įrankiai, daug dėmesio skirdamas patikimam veikimui, išmatuojamiems rezultatams ir prižiūrimiems pakeitimams esamose sistemose.',
         'github' => 'GitHub',
         'linkedin' => 'LinkedIn',
         'email' => 'El. paštas',
@@ -27,18 +27,15 @@ return [
                 'company' => 'UAB Vlantana',
                 'role' => 'PHP / Laravel Backend programuotojas',
                 'location' => 'Klaipėda, Lietuva',
-                'period' => '2023 m. lapkritis — dabar',
-                'description' => 'Logistikos srityje naudojamų gamybinių sistemų kūrimas ir priežiūra.',
+                'period' => '2023 m. lapkritis - dabar',
+                'description' => 'Backend kūrimas ir produkcinių logistikos sistemų priežiūra, apimanti modernias Laravel aplikacijas, legacy PHP kodą ir intensyviai duomenis naudojančius operacinius procesus.',
                 'responsibilities' => [
-                    'Naujos backend funkcionalumo kūrimas esamose PHP / Laravel sistemose.',
-                    'Legacy sistemų ir gamybinio kodo priežiūra bei tobulinimas.',
-                    'Produkcinių incidentų analizė ir pagrindinės problemų priežasties nustatymas.',
-                    'SQL užklausų ir duomenų bazių našumo optimizavimas naudojant MySQL ir Microsoft SQL Server.',
-                    'Darbas su REST API integracijomis ir išorinėmis paslaugomis.',
-                    'Automatinių užduočių, procesų ir el. pašto / SMS pranešimų kūrimas.',
-                    'PDF, Excel ir Word ataskaitų kūrimas ir priežiūra.',
-                    'Automatinių testų rašymas ir backend elgsenos tikrinimas.',
-                    'Kasdienis darbas su Docker, Laravel Sail, Git, code review ir produkcijos stebėjimo įrankiais.',
+                    'Kuriu ir prižiūriu backend funkcionalumą Laravel ir legacy PHP aplikacijose, naudojamose kasdienėse logistikos operacijose.',
+                    'Analizuoju produkcinius incidentus, seku klaidas per aplikacijos logiką, automatines užduotis, integracijas ir duomenų bazes bei šalinu jų pagrindines priežastis.',
+                    'Optimizuoju MySQL ir Microsoft SQL Server užklausas naudodamas indeksus, EXPLAIN, vykdymo planų analizę ir užklausų pertvarkymą.',
+                    'Kuriu REST integracijas, automatines ir fonines užduotis, Redis pagrindu veikiančius procesus bei el. pašto / SMS pranešimus.',
+                    'Prižiūriu ataskaitų, duomenų eksporto ir dokumentų generavimo procesus operaciniams naudotojams.',
+                    'Rašau automatinius testus ir kasdien dirbu su Docker, Laravel Sail, Git, code review, Sentry bei produkcijos stebėjimo įrankiais.',
                 ],
             ],
 
@@ -46,13 +43,12 @@ return [
                 'company' => 'AndersenLab',
                 'role' => 'PHP / Symfony programuotojas',
                 'location' => null,
-                'period' => '2023 m. birželis — 2023 m. rugsėjis',
-                'description' => 'Backend kūrimo patirtis su bankininkystės projektu naudojant PHP ir Symfony.',
+                'period' => '2023 m. birželis - 2023 m. rugsėjis',
+                'description' => 'Backend kūrimo patirtis bankininkystės projekte naudojant PHP ir Symfony.',
                 'responsibilities' => [
-                    'Darbas su esama Symfony kodo baze.',
-                    'Backend funkcionalumo kūrimas ir priežiūra.',
-                    'Darbas su duomenų bazėmis paremta aplikacijos logika.',
-                    'Git darbo proceso ir komandinio bendradarbiavimo praktikų naudojimas.',
+                    'Dirbau su esama Symfony kodo baze ir duomenimis paremta aplikacijos logika.',
+                    'Kūriau ir prižiūrėjau backend funkcionalumą.',
+                    'Naudojau Git pagrindu veikiantį kūrimo procesą ir komandinio darbo praktikas.',
                 ],
             ],
 
@@ -60,14 +56,48 @@ return [
                 'company' => 'CodeAcademy',
                 'role' => 'PHP / Laravel programuotojas',
                 'location' => null,
-                'period' => '2023 m. sausis — 2023 m. kovas',
+                'period' => '2023 m. sausis - 2023 m. kovas',
                 'description' => 'Praktinis PHP / Laravel programavimas kuriant elektroninės prekybos projektą.',
                 'responsibilities' => [
-                    'Backend funkcionalumo kūrimas naudojant Laravel.',
-                    'Darbas su Eloquent ORM, validacija ir reliacinėmis duomenų bazėmis.',
-                    'Aplikacijos funkcijų kūrimas nuo reikalavimų iki realizacijos.',
-                    'Darbas su Git ir struktūruotu programavimo procesu.',
+                    'Kūriau backend funkcionalumą naudodamas Laravel, Eloquent ORM ir validaciją.',
+                    'Dirbau su reliacinėmis duomenų bazėmis ir aplikacijos verslo logika.',
+                    'Kūriau funkcionalumą nuo reikalavimų iki realizacijos naudodamas Git.',
                 ],
+            ],
+        ],
+    ],
+
+    'projects' => [
+        'eyebrow' => 'Atrinkti darbai',
+        'title' => 'Atrinkti projektai',
+
+        'items' => [
+            'service_desk' => [
+                'name' => 'Service Desk',
+                'status' => 'Paruoštas produkcijai',
+                'description' => 'Pilnai paruošta Laravel Service Desk aplikacija, sukurta kaip išsamus į backend orientuotas portfolio projektas.',
+                'highlights' => [
+                    'Užklausų darbo eiga, RBAC ir Policies, auditavimo istorija, eilėse vykdomi pranešimai ir REST API autentifikacija.',
+                    'Jira ir GitHub integracijos su webhook pagrindu veikiančiais procesais.',
+                    'Nuo tiekėjo nepriklausoma AI pagalba su human-in-the-loop kontrole, automatiniais testais, CI ir produkciniu diegimu.',
+                ],
+                'case_study' => 'Projekto aprašymas',
+                'github' => 'GitHub',
+                'live' => 'Veikianti aplikacija',
+            ],
+
+            'voice_translator' => [
+                'name' => 'Voice Translator',
+                'status' => 'v1.0.0',
+                'description' => 'Produkcinis RU ↔ EN push-to-talk balso vertėjas, išaugęs į matavimais ir palyginimais pagrįstą kalbos technologijų projektą.',
+                'highlights' => [
+                    'Realaus laiko WebSocket pipeline su Google Speech-to-Text, DeepL vertimu ir OpenAI streaming TTS.',
+                    'Kontroliuojama benchmark metodika, lyginanti kalbos atpažinimo profilius naudojant tuos pačius įrašus ir kritinių elementų išsaugojimo metriką.',
+                    'Naršyklėje veikianti Engineering Lab aplinka, išmatuotas end-to-end vėlinimas, viešo demo apsaugos ir diegimas Railway platformoje.',
+                ],
+                'case_study' => 'Projekto aprašymas',
+                'github' => 'GitHub',
+                'live' => 'Veikiantis demo',
             ],
         ],
     ],
@@ -107,6 +137,7 @@ return [
                 'items' => [
                     'PHPUnit',
                     'Pest',
+                    'PHPStan',
                     'Xdebug',
                     'Laravel Pint',
                     'CI',
@@ -114,15 +145,16 @@ return [
             ],
 
             [
-                'title' => 'Inžinerija',
+                'title' => 'Infrastruktūra ir diegimas',
                 'items' => [
                     'Docker',
                     'Laravel Sail',
-                    'Git',
-                    'Gitea',
-                    'GitLab',
-                    'GitHub',
                     'Linux',
+                    'Git',
+                    'GitHub',
+                    'Gitea',
+                    'GitHub Actions',
+                    'Railway',
                     'Sentry',
                 ],
             ],
@@ -131,11 +163,23 @@ return [
                 'title' => 'Integracijos ir automatizavimas',
                 'items' => [
                     'REST integracijos',
-                    'El. pašto pranešimai',
-                    'SMS pranešimai',
+                    'Webhooks',
+                    'Queues ir foninės užduotys',
                     'Automatinės užduotys',
-                    'Foninis apdorojimas',
+                    'El. pašto / SMS pranešimai',
                     'PDF / Excel / Word generavimas',
+                ],
+            ],
+
+            [
+                'title' => 'Realtime ir AI',
+                'items' => [
+                    'WebSockets',
+                    'Google Speech-to-Text',
+                    'DeepL',
+                    'OpenAI API',
+                    'Streaming TTS',
+                    'AI / kalbos technologijų integracijos',
                 ],
             ],
         ],
@@ -153,7 +197,7 @@ return [
             ],
             [
                 'name' => 'Profesinis tobulėjimas',
-                'program' => 'Backend programavimas ir gamybinės sistemos',
+                'program' => 'Backend programavimas ir produkcinės sistemos',
                 'details' => 'Nuolatinis praktinis mokymasis dirbant su Laravel, SQL, integracijomis, testavimu ir sistemų priežiūra.',
             ],
         ],
@@ -186,17 +230,17 @@ return [
     'earlier_experience' => [
         'eyebrow' => 'Ankstesnė patirtis',
         'title' => 'Prieš programavimą',
-        'meta_description' => 'Andrej Kotov CV. PHP / Laravel Backend programuotojas, turintis profesinės patirties logistikos sistemose, duomenų bazėse, integracijose ir production sistemų priežiūroje.',
+        'meta_description' => 'Andrej Kotov CV. PHP / Laravel Backend programuotojas, turintis profesinės patirties logistikos sistemose, duomenų bazėse, integracijose ir produkcinių sistemų priežiūroje.',
         'paragraphs' => [
             'Prieš pradėdamas dirbti programavimo srityje dirbau aliuminių laivų gamyboje suvirintoju, o vėliau gamybos vadovu.',
-            'Ši patirtis padėjo išsiugdyti praktinį problemų sprendimą, planavimą, atsakomybę, komandinį darbą ir bendravimo įgūdžius, kurie naudingi ir programinės įrangos kūrime.',
+            'Ši patirtis padėjo išsiugdyti praktinio problemų sprendimo, planavimo, atsakomybės, komandinio darbo ir bendravimo įgūdžius, kurie naudingi ir programinės įrangos kūrime.',
         ],
     ],
 
     'contact' => [
         'eyebrow' => 'Kontaktai',
         'title' => 'Susisiekime',
-        'description' => 'Domina freelance ir nuotolinio PHP / Laravel backend programavimo galimybės, įskaitant darbą su esamomis sistemomis, legacy kodu ir projektais, kuriuose svarbų vaidmenį atlieka duomenų bazės.',
+        'description' => 'Domina PHP / Laravel backend galimybės, susijusios su produkcinėmis sistemomis, esamomis aplikacijomis, integracijomis, legacy sistemų modernizavimu ir intensyviai duomenų bazes naudojančiais procesais.',
         'email' => 'El. paštas',
         'linkedin' => 'LinkedIn',
         'github' => 'GitHub',
