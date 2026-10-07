@@ -56,7 +56,18 @@ class CvPageTest extends TestCase
             ->assertSee('Andrej Kotov')
             ->assertSee('PHP / Laravel Backend-разработчик')
             ->assertSee('Профессиональный опыт')
-            ->assertSee('UAB Vlantana');
+            ->assertSee('UAB Vlantana')
+            ->assertSee('Избранные проекты')
+            ->assertSee('Service Desk')
+            ->assertSee('Voice Translator')
+            ->assertSee(
+                route('localized.projects.service-desk', ['locale' => 'ru']),
+                false
+            )
+            ->assertSee(
+                route('localized.projects.voice-translator', ['locale' => 'ru']),
+                false
+            );
     }
 
     public function test_cv_language_switcher_preserves_current_page(): void
